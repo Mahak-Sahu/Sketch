@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image to Pencil Sketch</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Image to Pencil Sketch Converter</h1>
+        <input type="file" id="imageInput" accept="image/*" onchange="clearOldSketch()">
+        <button onclick="uploadImage()">Generate Pencil Sketch</button>
+        <div id="result">
+            <h3>Sketch Result:</h3>
+            <img id="sketchImage" src="" alt="Sketch will appear here">
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
