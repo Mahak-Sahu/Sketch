@@ -6,14 +6,15 @@
 
 body {
     font-family: Arial, sans-serif;
-    /* background-color: #f0f0f0; */
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: aqua;
     background-image: url('../static/WEB_STUFF/pexels-jessbaileydesign-743986.jpg');
-    background-size: contain;
+    background-size: cover; /* Ensures the image covers the entire area */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
 }
 
 .container {
@@ -22,19 +23,25 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     text-align: center;
+    max-width: 90%; /* Makes the container responsive */
     width: 400px;
     background-image: url('../static/WEB_STUFF/pexels-pixabay-301717.jpg');
-    background-size: contain;
+    background-size: cover; /* Ensures the container image covers the area */
+    background-repeat: no-repeat; /* Prevents repetition */
+    background-position: center; /* Centers the container image */
 }
 
 h1 {
     color: #333;
+    font-size: 1.8rem; /* Adjusts for responsiveness */
 }
 
 input[type="file"] {
     padding: 10px;
     border: 1px solid #ddd;
     margin-bottom: 20px;
+    width: 100%; /* Ensures input takes full width */
+    box-sizing: border-box; /* Adjusts padding within the width */
 }
 
 button {
@@ -45,6 +52,8 @@ button {
     cursor: pointer;
     border-radius: 5px;
     margin-bottom: 20px;
+    width: 100%; /* Button spans full width on small screens */
+    box-sizing: border-box;
 }
 
 button:hover {
@@ -57,5 +66,26 @@ button:hover {
 
 #sketchImage {
     max-width: 100%;
+    height: auto; /* Ensures images maintain aspect ratio */
     border-radius: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .container {
+        padding: 20px;
+        width: 100%; /* Ensures the container adjusts on smaller devices */
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        padding: 10px;
+    }
 }
